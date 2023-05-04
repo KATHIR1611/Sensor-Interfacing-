@@ -59,11 +59,41 @@ So, if the Echo pin was HIGH for 2ms (which we measure using the pulseIn() funct
 ## PROGRAM:
 
 ```
+const int trigPin = 9;
+const int echoPin = 10;
 
+long duration;
+int distance;
+void setup() {
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+Serial.begin(9600);
+}
+
+void loop() 
+{
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance= duration*0.034/2;
+  Serial.print("Distance: ");
+  Serial.println(distance);
+}
 
 ```
 
 ## CIRCUIT DIAGRAM:
+
+![](a1.jpeg)
+
+
 ## OUTPUT:
+
+![](a2.jpeg)
+
+
 ## RESULT:
 Thus the distance of the obstacle is measured using ultrasonic sensor and display the value in LCD and serial monitor using Arduino UNO controller.
