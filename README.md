@@ -64,6 +64,9 @@ So, if the Echo pin was HIGH for 2ms (which we measure using the pulseIn() funct
 
 ## PROGRAM:
 
+Developed by : Kathirvelan.K
+
+Register number : 212221220026
 ```
 const int trigPin = 9;
 const int echoPin = 10;
